@@ -62,7 +62,6 @@ extension MemeEditorViewController
         shareController.completionWithItemsHandler = {(activityTypeChosen: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) -> Void in
             if activityTypeChosen != nil && completed
             {
-                UIImageWriteToSavedPhotosAlbum(completedMeme, nil, nil, nil)
                 self.memes.append(self.meme)
                 self.navigationController?.popViewController(animated: true)
             }
