@@ -62,7 +62,9 @@ extension MemeEditorViewController
         shareController.completionWithItemsHandler = {(activityTypeChosen: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) -> Void in
             if activityTypeChosen != nil && completed
             {
-                self.memes.append(self.meme)
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.memes.append(self.meme)
+                
                 self.navigationController?.popViewController(animated: true)
             }
         }

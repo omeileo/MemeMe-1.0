@@ -24,7 +24,6 @@ class MemeEditorViewController: UIViewController
     @IBOutlet weak var topCaptionDistanceFromCloseButton: NSLayoutConstraint!
     
     var meme: Meme!
-    var memes: [Meme] = []
     var memeCaptions: [UITextField] = []
     let maxLength = 8
     var fontFamilies: [String] = []
