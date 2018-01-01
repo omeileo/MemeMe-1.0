@@ -16,6 +16,8 @@ class LandingScreenViewController: UIViewController
     @IBOutlet weak var launchCameraButton: UIButton!
     
     let memeEditorVCSegue = "memeEditorSegue"
+    let memeGallerySegue = "memeGallerySegue"
+    
     var meme: Meme!
     var imagePicker: UIImagePickerController!
     
@@ -30,7 +32,6 @@ class LandingScreenViewController: UIViewController
         }
        
         setupCamera()
-        memeGalleryButton.isEnabled = false
         navigationController?.setNavigationBarHidden(true, animated: true)
         meme = Meme.init(originalImage: nil, memeImage: nil, topCaption: nil, bottomCaption: nil)
     }
@@ -48,6 +49,10 @@ class LandingScreenViewController: UIViewController
         {
             launchCameraButton.isHidden = true
         }
+    }
+    
+    @IBAction func launchMemeGallery(_ sender: Any) {
+        performSegue(withIdentifier: memeGallerySegue, sender: nil)
     }
     
     @IBAction func launchGallery(_ sender: Any)

@@ -34,6 +34,7 @@ class MemeEditorViewController: UIViewController
         
         memeTopCaptionTextField.delegate = self
         memeBottomCaptionTextField.delegate = self
+
         memeCaptions = [memeTopCaptionTextField, memeBottomCaptionTextField]
         fontFamilies = [FontFamily.arial.rawValue, FontFamily.helvetica.rawValue, FontFamily.times.rawValue]
         
@@ -94,6 +95,8 @@ class MemeEditorViewController: UIViewController
         {
             case .download:
                 UIImageWriteToSavedPhotosAlbum(meme.memeImage!, nil, nil, nil)
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.memes.append(self.meme)
             case .share:
                 shareMeme(completedMeme: meme.memeImage!)
         }
