@@ -27,6 +27,7 @@ class MemeEditorViewController: UIViewController
     var memeCaptions: [UITextField] = []
     let maxLength = 8
     var fontFamilies: [String] = []
+    var sentMemesSegue = "sentMemesSegue"
 
     override func viewDidLoad()
     {
@@ -96,7 +97,8 @@ class MemeEditorViewController: UIViewController
             case .download:
                 UIImageWriteToSavedPhotosAlbum(meme.memeImage!, nil, nil, nil)
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.memes.append(self.meme)
+                meme.id = UUID().uuidString
+                appDelegate.memes.append(meme)
             case .share:
                 shareMeme(completedMeme: meme.memeImage!)
         }
@@ -107,7 +109,7 @@ class MemeEditorViewController: UIViewController
         actionsToolbar.isHidden = state
         cancelMemeButton.isHidden = state
     }
-
+    
     @IBAction func downloadMeme(_ sender: Any)
     {
         generateCompletedMeme()
@@ -138,6 +140,6 @@ class MemeEditorViewController: UIViewController
 
     @IBAction func cancelMeme(_ sender: UIButton)
     {
-        _ = navigationController?.popViewController(animated: true)
+        _ = navigationController?.popToRootViewController(animated: true)
     }
 }

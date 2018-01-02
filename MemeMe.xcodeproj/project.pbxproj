@@ -24,6 +24,9 @@
 		F3FBFDA81FEED340002E7F0B /* MemeGalleryCardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FBFDA71FEED340002E7F0B /* MemeGalleryCardsTableViewCell.swift */; };
 		F3FBFDAA1FF7E034002E7F0B /* MemeGalleryCardsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FBFDA91FF7E034002E7F0B /* MemeGalleryCardsViewController+TableView.swift */; };
 		F3FBFDB01FF7E643002E7F0B /* MemeViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FBFDAF1FF7E643002E7F0B /* MemeViewerViewController.swift */; };
+		F3FBFDB21FFA998D002E7F0B /* MemeGalleryGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FBFDB11FFA998D002E7F0B /* MemeGalleryGridCollectionViewCell.swift */; };
+		F3FBFDB81FFA9AF8002E7F0B /* MemeGalleryGridViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FBFDB71FFA9AF8002E7F0B /* MemeGalleryGridViewController+CollectionView.swift */; };
+		F3FBFDBA1FFAD689002E7F0B /* MemeGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FBFDB91FFAD689002E7F0B /* MemeGalleryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		F3FBFDA71FEED340002E7F0B /* MemeGalleryCardsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeGalleryCardsTableViewCell.swift; sourceTree = "<group>"; };
 		F3FBFDA91FF7E034002E7F0B /* MemeGalleryCardsViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemeGalleryCardsViewController+TableView.swift"; sourceTree = "<group>"; };
 		F3FBFDAF1FF7E643002E7F0B /* MemeViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeViewerViewController.swift; sourceTree = "<group>"; };
+		F3FBFDB11FFA998D002E7F0B /* MemeGalleryGridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeGalleryGridCollectionViewCell.swift; sourceTree = "<group>"; };
+		F3FBFDB71FFA9AF8002E7F0B /* MemeGalleryGridViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemeGalleryGridViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		F3FBFDB91FFAD689002E7F0B /* MemeGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeGalleryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +161,7 @@
 		F3FBFDA01FEC9E5F002E7F0B /* Meme Gallery */ = {
 			isa = PBXGroup;
 			children = (
+				F3FBFDB91FFAD689002E7F0B /* MemeGalleryViewController.swift */,
 				F3FBFDA51FEED2CE002E7F0B /* Meme Gallery Cards */,
 				F3FBFDA61FEED300002E7F0B /* Meme Gallery Grid */,
 				F3FBFDAC1FF7E459002E7F0B /* Meme Viewer */,
@@ -176,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				F3FBFDA11FEC9E9E002E7F0B /* MemeGalleryGridViewController.swift */,
+				F3FBFDB11FFA998D002E7F0B /* MemeGalleryGridCollectionViewCell.swift */,
+				F3FBFDB71FFA9AF8002E7F0B /* MemeGalleryGridViewController+CollectionView.swift */,
 			);
 			path = "Meme Gallery Grid";
 			sourceTree = "<group>";
@@ -263,10 +272,13 @@
 				F3FBFDB01FF7E643002E7F0B /* MemeViewerViewController.swift in Sources */,
 				F328F40F1FA4D550005DBBCC /* CustomDataTypes.swift in Sources */,
 				F3FBFDA21FEC9E9E002E7F0B /* MemeGalleryGridViewController.swift in Sources */,
+				F3FBFDB21FFA998D002E7F0B /* MemeGalleryGridCollectionViewCell.swift in Sources */,
 				F34931681FAFA5C400B76DE2 /* UIViewController+Utils.swift in Sources */,
+				F3FBFDBA1FFAD689002E7F0B /* MemeGalleryViewController.swift in Sources */,
 				F3AA5AAB1F970D6700B21683 /* LandingScreenViewController.swift in Sources */,
 				F328F4111FA64D3C005DBBCC /* Meme.swift in Sources */,
 				F397FB5A1FA18C4B0039FD0B /* LandingScreenViewController+UIImagePickerControllerDelegate.swift in Sources */,
+				F3FBFDB81FFA9AF8002E7F0B /* MemeGalleryGridViewController+CollectionView.swift in Sources */,
 				F3FBFDA81FEED340002E7F0B /* MemeGalleryCardsTableViewCell.swift in Sources */,
 				F3AA5AA91F970D6700B21683 /* AppDelegate.swift in Sources */,
 				F34931721FB03BF700B76DE2 /* MemeEditorViewController+UITextFieldDelegate.swift in Sources */,

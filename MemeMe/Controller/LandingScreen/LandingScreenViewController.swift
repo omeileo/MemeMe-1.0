@@ -33,7 +33,24 @@ class LandingScreenViewController: UIViewController
        
         setupCamera()
         navigationController?.setNavigationBarHidden(true, animated: true)
-        meme = Meme.init(originalImage: nil, memeImage: nil, topCaption: nil, bottomCaption: nil)
+        meme = Meme.init(originalImage: nil, memeImage: nil, topCaption: nil, bottomCaption: nil, id: nil, isEdited: false)
+        
+        navigationController?.delegate = self
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        if let memeGallery = viewController as? MemeGalleryViewController
+        {
+            if let grid = memeGallery.childViewControllers[0] as? MemeGalleryGridViewController
+            {
+                grid.memeGalleryGridCollectionView.reloadData()
+            }
+            
+            if let cards = memeGallery.childViewControllers[1] as? MemeGalleryCardsViewController, let tableView = cards.memeGalleryCardsTableView
+            {
+                    tableView.reloadData()
+            }
+        }
     }
     
     func setupCamera()
@@ -52,7 +69,8 @@ class LandingScreenViewController: UIViewController
     }
     
     @IBAction func launchMemeGallery(_ sender: Any) {
-        performSegue(withIdentifier: memeGallerySegue, sender: nil)
+//        performSegue(withIdentifier: memeGallerySegue, sender: nil)
+        _ = navigationController?.popViewController(animated: true)
     }
     
     @IBAction func launchGallery(_ sender: Any)

@@ -11,13 +11,13 @@ import UIKit
 
 extension MemeGalleryCardsViewController: UITableViewDelegate, UITableViewDataSource
 {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("AppDelegate meme count: \(appDelegate.memes.count)")
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         return appDelegate.memes.count
     }
     
-    // Create a cell for each table view row
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         let cell: MemeGalleryCardsTableViewCell = self.memeGalleryCardsTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! MemeGalleryCardsTableViewCell
         let meme = appDelegate.memes[indexPath.row]
         
@@ -28,12 +28,30 @@ extension MemeGalleryCardsViewController: UITableViewDelegate, UITableViewDataSo
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: viewMemeSegue, sender: appDelegate.memes[indexPath.row])
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        performSegue(withIdentifier: memeViewerSegue, sender: appDelegate.memes[indexPath.row])
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == viewMemeSegue
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete)
+        {
+            memeGalleryCardsTableView.beginUpdates()
+            
+            appDelegate.memes.remove(at: indexPath.row)
+            memeGalleryCardsTableView.deleteRows(at: [indexPath], with: .left)
+            
+            memeGalleryCardsTableView.endUpdates()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == memeViewerSegue
         {
             if let memeViewerViewController = segue.destination as? MemeViewerViewController, let meme = sender as? Meme
             {

@@ -14,22 +14,29 @@ extension MemeEditorViewController
     // MARK: Configure Captions for User to Edit
     func setupCaptions()
     {
-        // Set up text fields
-        for caption in memeCaptions
-        {
-            configureCaption(textField: caption)
-        }
+        let placeholders = ["TOP", "BOTTOM"]
+        let texts = [meme.topCaption, meme.bottomCaption]
         
-        populateTextField(textField: memeCaptions[0], text: "TOP")
-        populateTextField(textField: memeCaptions[1], text: "BOTTOM")
+        for index in 0..<memeCaptions.count
+        {
+            configureCaption(textField: memeCaptions[index], placeholder: placeholders[index], text: texts[index])
+        }
     }
     
-    func configureCaption(textField: UITextField)
+    func configureCaption(textField: UITextField, placeholder: String?, text: String?)
     {
         configureCaptionText(caption: textField, fontFamily: FontFamily.helvetica.rawValue)
         textField.layer.cornerRadius = 55/2
         
+        populateTextField(textField: textField, placeholder: placeholder, text: text)
+        
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    func populateTextField(textField: UITextField, placeholder: String?, text: String?)
+    {
+        textField.placeholder = placeholder
+        textField.text = text
     }
     
     @objc func textFieldDidChange (_ textField: UITextField)
@@ -46,6 +53,9 @@ extension MemeEditorViewController
         if memeTopCaptionTextField.hasText == true && memeBottomCaptionTextField.hasText == true
         {
             enableActionButtons(true)
+            
+            adjustTextFieldVisibility(textField: memeTopCaptionTextField, colorAlpha: 0.0)
+            adjustTextFieldVisibility(textField: memeBottomCaptionTextField, colorAlpha: 0.0)
         }
         else
         {
@@ -63,9 +73,10 @@ extension MemeEditorViewController
             if activityTypeChosen != nil && completed
             {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                self.meme.id = UUID().uuidString
                 appDelegate.memes.append(self.meme)
                 
-                self.navigationController?.popViewController(animated: true)
+                self.navigationController?.popToRootViewController(animated: true)
             }
         }
     }
@@ -74,12 +85,6 @@ extension MemeEditorViewController
     {
         memeImageView.contentMode = .scaleAspectFit
         memeImageView.image = meme.originalImage
-    }
-    
-    func populateTextField(textField: UITextField, text: String?)
-    {
-        textField.placeholder = text
-        textField.text = nil
     }
     
     func adjustTextFieldVisibility(textField: UITextField, colorAlpha: CGFloat)

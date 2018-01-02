@@ -8,7 +8,8 @@
 
 import UIKit
 
-class MemeGalleryCardsTableViewCell: UITableViewCell {
+class MemeGalleryCardsTableViewCell: UITableViewCell
+{
     @IBOutlet weak var completedMemeImageView: UIImageView!
     @IBOutlet weak var memeCaptionTopView: UIView!
     @IBOutlet weak var memeCaptionTopText: UILabel!

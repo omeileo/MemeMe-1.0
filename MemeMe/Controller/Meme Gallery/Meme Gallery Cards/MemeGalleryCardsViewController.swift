@@ -8,12 +8,13 @@
 
 import UIKit
 
-class MemeGalleryCardsViewController: UIViewController {
+class MemeGalleryCardsViewController: UIViewController
+{
     @IBOutlet weak var memeGalleryCardsTableView: UITableView!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let cellReuseIdentifier = "CardsCell"
-    let viewMemeSegue = "viewMemeSegue"
+    let memeViewerSegue = "memeViewerSegue"
     
     override func viewDidLoad()
     {
@@ -22,6 +23,10 @@ class MemeGalleryCardsViewController: UIViewController {
         memeGalleryCardsTableView.delegate = self
         memeGalleryCardsTableView.dataSource = self
         
-        memeGalleryCardsTableView.rowHeight = 92
+    }
+    
+    override func viewWillAppear(_ animated: Bool) 
+    {
+        memeGalleryCardsTableView.reloadData()
     }
 }
