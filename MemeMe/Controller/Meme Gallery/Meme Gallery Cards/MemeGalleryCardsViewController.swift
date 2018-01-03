@@ -11,6 +11,7 @@ import UIKit
 class MemeGalleryCardsViewController: UIViewController
 {
     @IBOutlet weak var memeGalleryCardsTableView: UITableView!
+    @IBOutlet weak var emptyGalleryText: UIStackView!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let cellReuseIdentifier = "CardsCell"
@@ -27,6 +28,7 @@ class MemeGalleryCardsViewController: UIViewController
     
     override func viewWillAppear(_ animated: Bool) 
     {
+        emptyGalleryText.isHidden = appDelegate.memes.count > 0 ? true : false
         memeGalleryCardsTableView.reloadData()
     }
 }

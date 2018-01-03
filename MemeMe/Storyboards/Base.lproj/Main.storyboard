@@ -128,6 +128,23 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient" translatesAutoresizingMaskIntoConstraints="NO" id="Js0-Bt-mgX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Raf-33-Cgf" userLabel="Empty Gallery Text">
+                                <rect key="frame" x="62" y="313" width="250" height="41"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memes Gallery Empty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBj-ot-fvJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click the + Button to Get Started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdx-IW-cEb">
+                                        <rect key="frame" x="0.0" y="20.5" width="250" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpf-Cx-GVe">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
@@ -257,6 +274,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Raf-33-Cgf" firstAttribute="centerX" secondItem="yXG-eu-qmd" secondAttribute="centerX" id="5oD-m0-km5"/>
                             <constraint firstItem="mpf-Cx-GVe" firstAttribute="leading" secondItem="YCC-Zg-hOj" secondAttribute="leading" id="7va-dy-NtP"/>
                             <constraint firstItem="Js0-Bt-mgX" firstAttribute="centerY" secondItem="yXG-eu-qmd" secondAttribute="centerY" id="EkD-LS-7qA"/>
                             <constraint firstItem="mpf-Cx-GVe" firstAttribute="centerX" secondItem="yXG-eu-qmd" secondAttribute="centerX" id="FYc-xR-fBZ"/>
@@ -267,12 +285,14 @@
                             <constraint firstItem="Js0-Bt-mgX" firstAttribute="trailing" secondItem="YCC-Zg-hOj" secondAttribute="trailing" id="SKA-JF-anj"/>
                             <constraint firstItem="Js0-Bt-mgX" firstAttribute="leading" secondItem="YCC-Zg-hOj" secondAttribute="leading" id="Zq9-WO-AFt"/>
                             <constraint firstItem="Js0-Bt-mgX" firstAttribute="centerX" secondItem="yXG-eu-qmd" secondAttribute="centerX" id="hWk-EJ-x5c"/>
+                            <constraint firstItem="Raf-33-Cgf" firstAttribute="centerY" secondItem="yXG-eu-qmd" secondAttribute="centerY" id="x1t-V4-erG"/>
                             <constraint firstItem="mpf-Cx-GVe" firstAttribute="top" secondItem="YCC-Zg-hOj" secondAttribute="top" id="yVt-ua-0J9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YCC-Zg-hOj"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Cards" image="Meme Gallery Cards" selectedImage="Meme Gallery Cards" id="TVW-Ez-H1A"/>
                     <connections>
+                        <outlet property="emptyGalleryText" destination="Raf-33-Cgf" id="SN4-CU-43M"/>
                         <outlet property="memeGalleryCardsTableView" destination="hjU-Pp-EPz" id="qFa-Z7-xnc"/>
                         <segue destination="FpI-vt-fUb" kind="show" identifier="memeViewerSegue" id="XpZ-fe-aYh"/>
                     </connections>
@@ -292,6 +312,23 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient" translatesAutoresizingMaskIntoConstraints="NO" id="8dx-aB-3BN">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aHB-2L-hoo" userLabel="Empty Gallery Text">
+                                <rect key="frame" x="62.5" y="313" width="250" height="41"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memes Gallery Empty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gT6-RJ-G5j">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click the + Button to Get Started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8y-o1-0T4">
+                                        <rect key="frame" x="0.0" y="20.5" width="250" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noz-f4-hcL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
@@ -389,12 +426,14 @@
                         <constraints>
                             <constraint firstItem="8dx-aB-3BN" firstAttribute="leading" secondItem="Dp4-ZX-TCa" secondAttribute="leading" id="75r-GE-pXJ"/>
                             <constraint firstItem="noz-f4-hcL" firstAttribute="centerX" secondItem="MzS-dl-Ndf" secondAttribute="centerX" id="8vr-Gw-KhL"/>
+                            <constraint firstItem="aHB-2L-hoo" firstAttribute="centerY" secondItem="MzS-dl-Ndf" secondAttribute="centerY" id="Ae5-uv-YLl"/>
                             <constraint firstItem="8dx-aB-3BN" firstAttribute="centerY" secondItem="MzS-dl-Ndf" secondAttribute="centerY" id="EGS-KJ-X60"/>
                             <constraint firstItem="noz-f4-hcL" firstAttribute="centerY" secondItem="MzS-dl-Ndf" secondAttribute="centerY" id="HAU-dQ-ZCa"/>
                             <constraint firstItem="Dp4-ZX-TCa" firstAttribute="trailing" secondItem="8dx-aB-3BN" secondAttribute="trailing" id="Jnv-QJ-7oZ"/>
                             <constraint firstItem="8dx-aB-3BN" firstAttribute="centerX" secondItem="MzS-dl-Ndf" secondAttribute="centerX" id="NKF-vR-l8l"/>
                             <constraint firstAttribute="bottom" secondItem="noz-f4-hcL" secondAttribute="bottom" id="ZcE-B8-6qG"/>
                             <constraint firstItem="noz-f4-hcL" firstAttribute="trailing" secondItem="Dp4-ZX-TCa" secondAttribute="trailing" id="fho-Ag-GTR"/>
+                            <constraint firstItem="aHB-2L-hoo" firstAttribute="centerX" secondItem="MzS-dl-Ndf" secondAttribute="centerX" id="kyE-H0-LH4"/>
                             <constraint firstItem="noz-f4-hcL" firstAttribute="top" secondItem="MzS-dl-Ndf" secondAttribute="top" id="qSR-O3-tZq"/>
                             <constraint firstItem="noz-f4-hcL" firstAttribute="leading" secondItem="Dp4-ZX-TCa" secondAttribute="leading" id="tlt-8Q-gpP"/>
                             <constraint firstAttribute="bottom" secondItem="8dx-aB-3BN" secondAttribute="bottom" id="wk4-ma-STE"/>
@@ -404,6 +443,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Grid" image="Meme Gallery Grid" selectedImage="Meme Gallery Grid" id="xLb-Bk-a1r"/>
                     <connections>
+                        <outlet property="emptyGalleryText" destination="aHB-2L-hoo" id="dcT-lx-kRI"/>
                         <outlet property="memeGalleryGridCollectionView" destination="4mV-pC-UtI" id="alc-sC-2rS"/>
                         <segue destination="FpI-vt-fUb" kind="show" identifier="memeViewerSegue" id="cGc-lg-hN5"/>
                     </connections>
@@ -619,6 +659,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eE2-kc-Pfu"/>
-        <segue reference="XpZ-fe-aYh"/>
+        <segue reference="cGc-lg-hN5"/>
     </inferredMetricsTieBreakers>
 </document>

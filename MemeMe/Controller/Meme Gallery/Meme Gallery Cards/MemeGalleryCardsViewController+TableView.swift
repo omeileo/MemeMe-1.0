@@ -44,6 +44,7 @@ extension MemeGalleryCardsViewController: UITableViewDelegate, UITableViewDataSo
             
             appDelegate.memes.remove(at: indexPath.row)
             memeGalleryCardsTableView.deleteRows(at: [indexPath], with: .left)
+            emptyGalleryText.isHidden = appDelegate.memes.count > 0 ? true : false
             
             memeGalleryCardsTableView.endUpdates()
         }

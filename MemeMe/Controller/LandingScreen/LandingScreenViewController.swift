@@ -38,17 +38,20 @@ class LandingScreenViewController: UIViewController
         navigationController?.delegate = self
     }
     
-    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool)
+    {
         if let memeGallery = viewController as? MemeGalleryViewController
         {
-            if let grid = memeGallery.childViewControllers[0] as? MemeGalleryGridViewController
+            if let grid = memeGallery.childViewControllers[0] as? MemeGalleryGridViewController, let collectionView = grid.memeGalleryGridCollectionView
             {
-                grid.memeGalleryGridCollectionView.reloadData()
+                collectionView.reloadData()
+                grid.emptyGalleryText.isHidden = grid.appDelegate.memes.count > 0 ? true : false
             }
             
             if let cards = memeGallery.childViewControllers[1] as? MemeGalleryCardsViewController, let tableView = cards.memeGalleryCardsTableView
             {
-                    tableView.reloadData()
+                tableView.reloadData()
+                cards.emptyGalleryText.isHidden = cards.appDelegate.memes.count > 0 ? true : false
             }
         }
     }

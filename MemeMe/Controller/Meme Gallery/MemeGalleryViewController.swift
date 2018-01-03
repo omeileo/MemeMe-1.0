@@ -12,13 +12,6 @@ class MemeGalleryViewController: UITabBarController
 {
     let newMemeSegue = "newMemeSegue"
     
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-
-//        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }

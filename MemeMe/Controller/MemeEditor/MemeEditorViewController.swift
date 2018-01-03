@@ -140,6 +140,6 @@ class MemeEditorViewController: UIViewController
 
     @IBAction func cancelMeme(_ sender: UIButton)
     {
-        _ = navigationController?.popToRootViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
 }

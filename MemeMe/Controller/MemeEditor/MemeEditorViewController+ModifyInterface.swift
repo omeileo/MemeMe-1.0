@@ -76,6 +76,8 @@ extension MemeEditorViewController
                 self.meme.id = UUID().uuidString
                 appDelegate.memes.append(self.meme)
                 
+                print("Navigation controllers: \(self.navigationController?.childViewControllers)")
+                
                 self.navigationController?.popToRootViewController(animated: true)
             }
         }

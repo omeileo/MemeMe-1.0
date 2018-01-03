@@ -11,6 +11,7 @@ import UIKit
 class MemeGalleryGridViewController: UIViewController
 {
     @IBOutlet weak var memeGalleryGridCollectionView: UICollectionView!    
+    @IBOutlet weak var emptyGalleryText: UIStackView!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let cellReuseIdentifier = "GridCell"
@@ -26,6 +27,7 @@ class MemeGalleryGridViewController: UIViewController
     
     override func viewWillAppear(_ animated: Bool) 
     {
+        emptyGalleryText.isHidden = appDelegate.memes.count > 0 ? true : false
         memeGalleryGridCollectionView.reloadData()
     }
 }
