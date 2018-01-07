@@ -17,14 +17,4 @@ struct Meme
     var bottomCaption: String?
     var id: String?
     var isEdited: Bool
-    
-    init(originalImage: UIImage?, memeImage: UIImage?, topCaption: String?, bottomCaption: String?, id: String?, isEdited: Bool)
-    {
-        self.originalImage = originalImage
-        self.memeImage = memeImage
-        self.topCaption = topCaption
-        self.bottomCaption = bottomCaption
-        self.id = id
-        self.isEdited = isEdited
-    }
 }
